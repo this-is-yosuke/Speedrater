@@ -8,8 +8,8 @@ CREATE TABLE product(
 
 -- Adding values
 
-INSERT INTO product(productName, manufacturer)
+INSERT INTO product(productName, company)
 Values('Splendee', 'HiuKim Yuen');
 
-INSERT INTO product(productName, manufacturer)
-Values("World's Finest Hot Sauce", 'Travis Williamson');
+INSERT INTO product(productName, company)
+Values('Finest Hot Sauce', 'Travis Williamson');
