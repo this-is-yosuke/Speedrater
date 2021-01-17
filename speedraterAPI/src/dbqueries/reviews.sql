@@ -6,7 +6,7 @@ CREATE TABLE reviews(
     productId INTEGER REFERENCES product(productId),
     rating NUMERIC NOT NULL,
     critique VARCHAR(500) NOT NULL,
-    reviewerId INTEGER REFERENCES user(userId),
+    reviewerId INTEGER REFERENCES users(userId),
     reviewDate DATE
 )
 
