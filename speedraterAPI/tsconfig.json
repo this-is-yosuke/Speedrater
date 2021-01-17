@@ -3,7 +3,7 @@
         "outDir": "build/dist",
         "module": "commonjs",
         "target": "ES3",
-        "lib": ["ES2020"],
+        "lib": ["ES2019"],
         "sourceMap": true,
         "allowJs": true,
         "moduleResolution": "node",
