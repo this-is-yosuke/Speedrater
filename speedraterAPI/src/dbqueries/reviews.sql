@@ -5,8 +5,9 @@ CREATE TABLE reviews(
     category VARCHAR(50),
     product VARCHAR(100),
     rating NUMERIC,
-    critique VARCHAR(500)
+    critique VARCHAR(500),
     reviewer TEXT,
+    reviewDate DATE
 )
 
 -- Adding Values
