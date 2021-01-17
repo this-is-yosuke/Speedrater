@@ -2,8 +2,8 @@
 
 CREATE TABLE product(
     productId SERIAL PRIMARY KEY,
-    productName TEXT,
-    company TEXT
+    productName TEXT NOT NULL,
+    company TEXT NOT NULL
 )
 
 -- Adding values
