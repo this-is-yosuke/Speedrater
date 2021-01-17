@@ -9,6 +9,7 @@ export default class Review {
         public product = Product,
         public rating = 0,
         public critique = '',
-        public reviewer = User
+        public reviewer = User,
+        public reviewDate = ''
     ) {}
 }
