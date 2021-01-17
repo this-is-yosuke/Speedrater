@@ -12,7 +12,4 @@ INSERT INTO product(productName, manufacturer)
 Values('Splendee', 'HiuKim Yuen');
 
 INSERT INTO product(productName, manufacturer)
-Values('McRib', "McDonald's");
-
-INSERT INTO product(productName, manufacturer)
 Values("World's Finest Hot Sauce", 'Travis Williamson');
