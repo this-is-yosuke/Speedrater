@@ -8,19 +8,8 @@ CREATE TABLE category (
 -- Adding values
 
 INSERT INTO category(categoryName)
-VALUES('Restaurants');
+VALUES('Food');
 
 INSERT INTO category(categoryName)
-VALUES('Hotels');
+VALUES('Games');
 
-INSERT INTO category(categoryName)
-VALUES('Television');
-
-INSERT INTO category(categoryName)
-VALUES('Movies');
-
-INSERT INTO category(categoryName)
-VALUES('Video Games');
-
-INSERT INTO category(categoryName)
-VALUES('Board Games');
