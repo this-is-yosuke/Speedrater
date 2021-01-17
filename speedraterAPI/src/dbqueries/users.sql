@@ -1,7 +1,7 @@
 -- Table Creation
 
 CREATE TABLE users (
-	userId SERIAL,
+	userId SERIAL PRIMARY KEY,
 	firstName TEXT,
 	lastName TEXT,
 	email TEXT,
@@ -9,3 +9,4 @@ CREATE TABLE users (
 );
 
 -- Adding values
+INSERT INTO users ('Joe', 'Shmoe', 'joeshmoe123@gmail.com', 'pass1')
