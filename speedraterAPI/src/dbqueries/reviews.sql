@@ -4,12 +4,13 @@ CREATE TABLE reviews(
     reviewId Serial PRIMARY KEY,
     categoryId INTEGER REFERENCES category(categoryId),
     productId INTEGER REFERENCES product(productId),
-    rating NUMERIC,
-    critique VARCHAR(500),
+    rating NUMERIC NOT NULL,
+    critique VARCHAR(500) NOT NULL,
     reviewerId INTEGER REFERENCES user(userId),
     reviewDate DATE
 )
 
 -- Adding Values
 
-INSERT INTO reviews()
+INSERT INTO reviews(categoryId, productId, rating, reviewerId, critique)
+Values();
