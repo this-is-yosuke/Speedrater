@@ -1,7 +1,10 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import { sessionMiddleware } from './middleware/session.middleware'
+import { authRouter } from './routers/auth.router'
+import { usersRouter } from './routers/users.router';
 
+// const port = process.env.PORT || 8050;
 const port = 8050;
 const app = express();
 
@@ -27,9 +30,9 @@ app.use(sessionMiddleware);
 
 // Routers
 
+app.use('/users', usersRouter)
 app.use()
-app.use()
-app.use()
+app.use(authRouter)
 
 app.listen(port, ()=> {
     console.log('app started on port: ' + port);
