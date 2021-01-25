@@ -3,9 +3,10 @@ import bodyParser from 'body-parser'
 import { sessionMiddleware } from './middleware/session.middleware'
 import { authRouter } from './routers/auth.router'
 import { usersRouter } from './routers/users.router';
+import { reviewRouter } from './routers/review.router';
 
 // const port = process.env.PORT || 8050;
-const port = 8050;
+const port = process.env.PORT;
 const app = express();
 
 app.use((req, res, next) => {
@@ -31,7 +32,7 @@ app.use(sessionMiddleware);
 // Routers
 
 app.use('/users', usersRouter)
-app.use()
+app.use('/reviews', reviewRouter)
 app.use(authRouter)
 
 app.listen(port, ()=> {
