@@ -1,7 +1,7 @@
 import { connectionPool } from '../util/connection'
 import { PoolClient } from 'pg'
 import { convertSqlUser } from '../util/user.converter'
-// import User from '../models/user'
+import User from '../models/user'
 
 // Getting name and pass for Security
 
@@ -41,4 +41,23 @@ export async function findAll() {
     return undefined;
 }
 
+// Saving
 
+export async function save(user: User) {
+    let client : PoolClient;
+    try{
+        client = await connectionPool.connect();
+        const queryString = `
+            INSERT INTO users (firstname, lastname, email, pass, role)
+            VALUES ($1, $2, $3, $4, $5)
+            RETURNING userid
+        `;
+        const params = [user.firstName, user.lastName, user.email, user.password, user.roles];
+        const result = await client.query(queryString, params);
+        return result.rows[0].userid;
+    }catch (err) {
+        console.log(err)
+    }finally {
+        client && client.release();
+    }
+}
