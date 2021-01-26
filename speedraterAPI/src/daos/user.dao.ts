@@ -1,6 +1,7 @@
 import { connectionPool } from '../util/connection'
 import { PoolClient } from 'pg'
-import User from '../models/user'
+import { convertSqlUser } from '../util/user.converter'
+// import User from '../models/user'
 
 // Getting name and pass for Security
 
@@ -25,16 +26,19 @@ Functions For Finding
 */ 
 
 export async function findAll() {
+    console.log('finding all users');
     let client: PoolClient;
     try{
         client = await connectionPool.connect();
         const result = await client.query('SELECT * FROM users');
         return result.rows.map(convertSqlUser);
     }catch (err) {
+        console.log('there was an error')
         console.log(err);
     }finally{
         client && client.release();
     }
+    return undefined;
 }
 
 
