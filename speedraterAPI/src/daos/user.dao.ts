@@ -48,7 +48,7 @@ export async function save(user: User) {
     try{
         client = await connectionPool.connect();
         const queryString = `
-            INSERT INTO users (firstname, lastname, email, pass, role)
+            INSERT INTO users (firstname, lastname, email, pass, roles)
             VALUES ($1, $2, $3, $4, $5)
             RETURNING userid
         `;
