@@ -4,6 +4,7 @@ import { sessionMiddleware } from './middleware/session.middleware'
 import { authRouter } from './routers/auth.router'
 import { usersRouter } from './routers/users.router';
 import { reviewRouter } from './routers/review.router';
+import { categoryRouter } from './routers/category.router';
 
 // const port = process.env.PORT || 8050;
 const port = process.env.PORT;
@@ -33,6 +34,7 @@ app.use(sessionMiddleware);
 
 app.use('/users', usersRouter)
 app.use('/reviews', reviewRouter)
+app.use('/category', categoryRouter)
 app.use(authRouter)
 
 app.listen(port, ()=> {
