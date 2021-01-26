@@ -10,4 +10,11 @@ reviewRouter.get('', [
         const reviews = await reviewDao.findAll();
         res.json(reviews);
     }
-])
+]);
+
+// Getting by category
+reviewRouter.get('/category/:categoryId', async(req, res) => {
+    const categoryId = +req.params.categoryId;
+    const reviews = await reviewDao.findByCategoryId(categoryId);
+    res.json(reviews);
+})
