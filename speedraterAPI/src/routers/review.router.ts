@@ -18,3 +18,20 @@ reviewRouter.get('/category/:categoryId', async(req, res) => {
     const reviews = await reviewDao.findByCategoryId(categoryId);
     res.json(reviews);
 })
+
+// Saving a review
+reviewRouter.post('', async (req, res) => {
+    const review = req.body;
+    if(!review) {
+        res.sendStatus(400);
+    }else{
+        const id = await reviewDao.save(review);
+        if(!id) {
+            res.sendStatus(400);
+        }else{
+            review.id = id;
+            res.status(201);
+            res.json(review);
+        }
+    }
+});
