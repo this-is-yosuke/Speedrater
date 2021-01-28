@@ -52,6 +52,7 @@ export async function save(user: User) {
             VALUES ($1, $2, $3, $4, $5)
             RETURNING userid
         `;
+        // The params need to match your Model.ts file
         const params = [user.firstName, user.lastName, user.email, user.password, user.roles];
         const result = await client.query(queryString, params);
         return result.rows[0].userid;
